@@ -6,7 +6,7 @@ A simple web app built using [heart failure prediction dataset](https://www.kagg
 
 ## File Descriptions
 - **heart.csv** - raw data
-- ** heart-disease.ipynb**: notebook with data exploration, feature engineering and model building
+- **heart-disease.ipynb**: notebook with data exploration, feature engineering and model building
 - **model.pkl:** trained model, saved with pickle
 - **app.py**: contains script to run Flask app
 - **static**: folder with CSS file

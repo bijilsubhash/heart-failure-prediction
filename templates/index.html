@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Heart Disease</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Heart Disease Classifier</h1>
+    <p>Cardiovascular diseases (CVDs) can be fatal, taking an estimated 17.9 million lives each year, which accounts for 31% of all deaths worldwide. Four out of 5 CVD deaths are due to heart attacks and strokes, and one-third of these deaths occur prematurely in people under 70 years of age. Herein, we are using 11 input variables to predict the likelihood of heart disease.</p>
+
+    <form action="{{url_for('predict')}}" method="post">
+        <label for="age">Age (28-77):</label>
+        <input type="number" min="28" max="77" name='age'>
+        <br>
+        <label for="sex">Sex:</label>
+        <select type="text" name="sex" id="sex">
+            <option value="M">M</option>
+            <option value="F">G</option>
+        </select>
+        <br>
+        <label for="chest-pain-type">Chest Pain Type:</label>
+        <select id="chest-pain-type" type="text" name="chest-pain-type">
+            <option value="ATA">ATA</option>
+            <option value="NAP">NAP</option>
+            <option value="ASY">ASY</option>
+            <option value="TA">TA</option>
+        </select>
+        <br>
+        <label for="resting-bp">Resting BP (0-200):</label>
+        <input type="number" min="0" max="200" name='resting-bp'>
+        <br>
+        <label for="cholestrol">Cholestrol (0-600):</label>
+        <input type="number" min="0" max="600" name='cholestrol'>
+        <br>
+        <label for="fasting-bs">Fasting BS (0-1):</label>
+        <input type="number" min="0" max="1" name='fasting-bs'>
+        <br>
+        <label for="resting-ecg">Resting ECG:</label>
+        <select id="resting-ecg" type="text" name="resting-ecg">
+            <option value="Normal">Normal</option>
+            <option value="ST">ST</option>
+            <option value="LVH">LVH</option>
+        </select>
+        <br>
+        <label for="max-hr">Max HR (60-200):</label>
+        <input type="number" min="60" max="200" name='max-hr'>
+        <br>
+        <label for="exercise-angina">Exercise Angina:</label>
+        <select id="exercise-angina" type="text" name="exercise-angina">
+            <option value="N">N</option>
+            <option value="Y">Y</option>
+        </select>
+        <br>
+        <label for="old-peak">Old Peak (-2.6 - 6.2):</label>
+        <input type="number" min="-2.6" max="6.2" step=0.1 name='old-peak'>
+        <br>
+        <label for="st-slope">ST Slope:</label>
+        <select id="st-slope" type="text" name="st-slope">
+            <option value="Up">Up</option>
+            <option value="Flat">Flat</option>
+            <option value="Down">Down</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit" />
+    </form>
+    <h1>{{ prediction_text }}</h1>
+    <p>Source: <a href="https://www.kaggle.com/fedesoriano/heart-failure-prediction">Heart Failure Prediction Dataset</a></p>
+</body>
+<script></script>
+
+</html>

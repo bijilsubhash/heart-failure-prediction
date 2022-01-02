@@ -1,0 +1,9 @@
+body {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+input, select {
+    margin: 8px 0;
+  }

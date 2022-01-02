@@ -1,6 +1,6 @@
 # Heart Failure Prediction Web App
 
-Link: https://heart-failure-prediction-flask.herokuapp.com/predict
+Link: https://heart-failure-prediction-flask.herokuapp.com
 
 A simple web app built using [heart failure prediction dataset](https://www.kaggle.com/fedesoriano/heart-failure-prediction "heart failure prediction dataset") from Kaggle, deployed on Heroku using Flask.
 
